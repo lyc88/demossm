@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lyc.dao.DatafileDao">
+
+    <resultMap id="BaseResultMap" type="com.lyc.model.po.DatafilePO">
+		<id column="id" property="id" jdbcType="BIGINT"/>
+		<result column="filePath" property="filepath" jdbcType="VARCHAR"/>
+		<result column="fileName" property="filename" jdbcType="VARCHAR"/>
+		<result column="dataId" property="dataid" jdbcType="INTEGER"/>
+    </resultMap>
+
+    <insert id="insert">
+        INSERT INTO datafile(id,filePath,fileName,dataId)
+        VALUES(null,#{filepath},#{filename},#{dataid})
+    </insert>
+    <insert id="batchInsert" parameterType="list">
+        INSERT INTO datafile(id,filePath,fileName,dataId)
+        VALUES
+        <foreach collection="list" item="item" index="index" separator=",">
+            (null,#{item.filepath},#{item.filename},#{item.dataid})
+        </foreach>
+        ON DUPLICATE KEY UPDATE
+        id=VALUES(id),filePath=VALUES(filePath),fileName=VALUES(fileName),dataId=VALUES(dataId)
+    </insert>
+    <update id="update">
+        UPDATE datafile
+        <trim prefix="SET" suffixOverrides=",">
+			<if test="filepath!=null">
+                filePath=#{filepath},
+            </if>
+			<if test="filename!=null">
+                fileName=#{filename},
+            </if>
+			<if test="dataid!=null">
+                dataId=#{dataid},
+            </if>
+        </trim>
+        WHERE id=#{id}
+    </update>
+
+    <sql id="SELECT_FIELD">
+        id,filePath,fileName,dataId
+    </sql>
+
+    <sql id="QUERY_SQL">
+        from datafile
+        <where>
+			<if test="id!=null and id!=-1">
+               AND id=#{id}
+            </if>
+			<if test="filepath!=null">
+               AND filePath=#{filepath}
+            </if>
+			<if test="filename!=null">
+               AND fileName=#{filename}
+            </if>
+			<if test="dataid!=null and dataid!=-1">
+               AND dataId=#{dataid}
+            </if>
+
+        </where>
+    </sql>
+
+    <select id="query" resultMap="BaseResultMap">
+        select <include refid="SELECT_FIELD"/>
+        <include refid="QUERY_SQL"/>
+        <if test="limit!=null and limit!=-1 ">
+            <if test="offset!=null and offset!=-1">
+                limit #{offset},#{limit}
+            </if>
+        </if>
+    </select>
+
+    <select id="count" resultType="long">
+        select count(*)
+        <include refid="QUERY_SQL"/>
+    </select>
+
+</mapper>
