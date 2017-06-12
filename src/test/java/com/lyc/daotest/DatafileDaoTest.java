@@ -41,8 +41,8 @@ public class DatafileDaoTest {
         PageHelper.startPage(1,10);
         criteria.andNameLike("中国%");
         List<B> list = bMapper.selectByExample(example);
+        //分页信息
         PageInfo pageInfo = new PageInfo(list);
-
         System.out.println(pageInfo.getTotal());
     }
 }
