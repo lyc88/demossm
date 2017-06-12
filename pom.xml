@@ -195,6 +195,20 @@
       <artifactId>pagehelper</artifactId>
       <version>${pagehelper.version}</version>
     </dependency>
+
+    <!-- https://mvnrepository.com/artifact/directory-network/mina -->
+  <!--  <dependency>
+      <groupId>directory-network</groupId>
+      <artifactId>mina</artifactId>
+      <version>0.8.0</version>
+    </dependency>-->
+    <!-- https://mvnrepository.com/artifact/org.kaazing/mina-core -->
+    <dependency>
+      <groupId>org.kaazing</groupId>
+      <artifactId>mina-core</artifactId>
+      <version>2.1.0.0</version>
+    </dependency>
+
   </dependencies>
   <build>
     <finalName>demo-ssm</finalName>
