@@ -30,6 +30,30 @@ public class TimeServerHandler extends IoHandlerAdapter {
     }
 
     @Override
+    public void messageSent(IoSession session, Object message) throws Exception {
+        super.messageSent(session, message);
+    }
+
+    public TimeServerHandler() {
+        super();
+    }
+
+    @Override
+    public void sessionCreated(IoSession session) throws Exception {
+        super.sessionCreated(session);
+    }
+
+    @Override
+    public void sessionOpened(IoSession session) throws Exception {
+        super.sessionOpened(session);
+    }
+
+    @Override
+    public void sessionClosed(IoSession session) throws Exception {
+        super.sessionClosed(session);
+    }
+
+    @Override
     public void sessionIdle(IoSession session, IdleStatus status)
             throws Exception {
         System.out.println("IDLE " + session.getIdleCount(status));
