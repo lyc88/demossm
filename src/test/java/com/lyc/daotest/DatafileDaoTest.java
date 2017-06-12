@@ -43,6 +43,6 @@ public class DatafileDaoTest {
         List<B> list = bMapper.selectByExample(example);
         //分页信息
         PageInfo pageInfo = new PageInfo(list);
-        System.out.println(pageInfo.getTotal());
+        //System.out.println(pageInfo.getTotal());
     }
 }
