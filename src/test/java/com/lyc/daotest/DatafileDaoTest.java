@@ -39,7 +39,6 @@ public class DatafileDaoTest {
         BExample example = new BExample();
         BExample.Criteria criteria = example.createCriteria();
         PageHelper.startPage(1,10);
-
         criteria.andNameLike("中国%");
         List<B> list = bMapper.selectByExample(example);
 
