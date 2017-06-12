@@ -1,6 +1,6 @@
 package com.lyc.mina.demo;
 
-import com.lyc.mina.TimeServerHandler;
+import com.lyc.mina.demo.TimeServerHandler;
 import org.apache.mina.core.service.IoAcceptor;
 import org.apache.mina.core.session.IdleStatus;
 import org.apache.mina.filter.codec.ProtocolCodecFilter;
