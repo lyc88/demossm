@@ -9,6 +9,8 @@ import com.lyc.model.po.BExample;
 import com.lyc.model.query.DatafileQuery;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
@@ -22,6 +24,8 @@ import java.util.List;
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations = "classpath:spring/applicationContext.xml")
 public class DatafileDaoTest {
+
+    private Logger logger = LoggerFactory.getLogger(this.getClass());
     @Resource
     private DatafileDao datafileDao;
     @Autowired
@@ -43,6 +47,7 @@ public class DatafileDaoTest {
         List<B> list = bMapper.selectByExample(example);
         //分页信息
         PageInfo pageInfo = new PageInfo(list);
+        logger.info(pageInfo.getPageNum()+"");
         //System.out.println(pageInfo.getTotal());
     }
 }
