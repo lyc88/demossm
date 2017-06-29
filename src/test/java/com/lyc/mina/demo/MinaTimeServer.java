@@ -17,7 +17,7 @@ import java.nio.charset.Charset;
  */
 public class MinaTimeServer {
     // 定义监听端口
-    private static final int PORT = 6488;
+    private static final int PORT = 6489;
 
     public static void main(String[] args) throws IOException {
         // 创建服务端监控线程

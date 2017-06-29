@@ -1,6 +1,7 @@
 package com.lyc.web;
 
 import com.lyc.service.BService;
+import com.lyc.service.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -17,8 +18,11 @@ import java.util.List;
 public class IndexController {
     @Autowired
     private BService bService;
+    @Autowired
+    private Test test;
     @RequestMapping("hello")
     public @ResponseBody List hello(){
-       return bService.findList();
+        System.out.println(test.url);
+       return null;
     }
 }

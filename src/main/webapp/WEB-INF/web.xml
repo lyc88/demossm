@@ -5,15 +5,7 @@
          id="MyWebApp" version="2.5">
     <display-name>demossm</display-name>
 
-    <!-- 启动spring -->
-    <context-param>
-        <param-name>contextConfigLocation</param-name>
-        <param-value>classpath:spring/applicationContext*.xml</param-value>
-    </context-param>
-    <!-- 使用监听器加载applicationContext文件 -->
-    <listener>
-        <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
-    </listener>
+
 
     <!-- 解决乱码问题 -->
     <filter>
@@ -73,7 +65,15 @@
         <servlet-name>dispatcherServlet</servlet-name>
         <url-pattern>/</url-pattern>
     </servlet-mapping>
-
+    <!-- 启动spring -->
+    <context-param>
+        <param-name>contextConfigLocation</param-name>
+        <param-value>classpath:spring/applicationContext*.xml</param-value>
+    </context-param>
+    <!-- 使用监听器加载applicationContext文件 -->
+    <listener>
+        <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+    </listener>
     <welcome-file-list>
         <welcome-file>index.jsp</welcome-file>
     </welcome-file-list>

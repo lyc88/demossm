@@ -27,6 +27,12 @@ public class TimeServerHandler extends IoHandlerAdapter {
         cause.printStackTrace();
     }
 
+    @Override
+    public void messageSent(IoSession session, Object message) throws Exception {
+        session.close(true);
+        //super.messageSent(session, message);
+    }
+
     /**
      * 消息接收事件
      */

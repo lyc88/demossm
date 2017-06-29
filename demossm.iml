@@ -18,6 +18,11 @@
     <facet type="Spring" name="Spring">
       <configuration />
     </facet>
+    <facet type="dmServerConfig" name="Spring DM Configuration">
+      <configuration>
+        <option name="name" value="demossm" />
+      </configuration>
+    </facet>
   </component>
   <component name="NewModuleRootManager" LANGUAGE_LEVEL="JDK_1_8" inherit-compiler-output="false">
     <output url="file://$MODULE_DIR$/target/classes" />
@@ -38,7 +43,7 @@
     <orderEntry type="module-library">
       <library name="Maven: com.alibaba:jconsole:1.8.0">
         <CLASSES>
-          <root url="jar://E:/Program Files/Java/jdk1.8.0_65/lib/jconsole.jar!/" />
+          <root url="jar://E:/soft/jdk1.8/jdk1.8.0_65/lib/jconsole.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
@@ -47,7 +52,7 @@
     <orderEntry type="module-library">
       <library name="Maven: com.alibaba:tools:1.8.0">
         <CLASSES>
-          <root url="jar://E:/Program Files/Java/jdk1.8.0_65/lib/tools.jar!/" />
+          <root url="jar://E:/soft/jdk1.8/jdk1.8.0_65/lib/tools.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
@@ -158,5 +163,8 @@
     <orderEntry type="library" name="Maven: us.codecraft:webmagic-extension:0.7.1" level="project" />
     <orderEntry type="library" name="Maven: redis.clients:jedis:2.9.0" level="project" />
     <orderEntry type="library" name="Maven: org.apache.commons:commons-pool2:2.4.2" level="project" />
+    <orderEntry type="library" name="Maven: io.netty:netty-all:5.0.0.Alpha1" level="project" />
+    <orderEntry type="library" name="Maven: org.jboss.marshalling:jboss-marshalling-river:1.4.11.Final" level="project" />
+    <orderEntry type="library" name="Maven: org.jboss.marshalling:jboss-marshalling:1.4.11.Final" level="project" />
   </component>
 </module>

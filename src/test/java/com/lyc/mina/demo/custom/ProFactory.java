@@ -12,12 +12,12 @@ import java.nio.charset.Charset;
  */
 public class ProFactory implements ProtocolCodecFactory {
 
-    private final ProDecoder proDecoder;
+    private final Pro1Decoder proDecoder;
 
     private final ProEncoder proEncoder;
 
     public ProFactory(Charset charset) {
-        proDecoder = new ProDecoder(charset);
+        proDecoder = new Pro1Decoder(charset);
         proEncoder = new ProEncoder(charset);
     }
 

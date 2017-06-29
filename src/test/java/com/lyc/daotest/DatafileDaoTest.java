@@ -31,6 +31,8 @@ public class DatafileDaoTest {
     @Autowired
     private BMapper bMapper;
 
+    @Autowired
+    private com.lyc.service.Test test;
     @Test
     public void testquery(){
         DatafileQuery query = new DatafileQuery();
@@ -49,5 +51,10 @@ public class DatafileDaoTest {
         PageInfo pageInfo = new PageInfo(list);
         logger.info(pageInfo.getPageNum()+"");
         //System.out.println(pageInfo.getTotal());
+    }
+
+    @Test
+    public  void test03(){
+        System.out.println(test.url);
     }
 }

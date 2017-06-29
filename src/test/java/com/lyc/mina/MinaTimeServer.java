@@ -26,7 +26,7 @@ public class MinaTimeServer {
         acceptor.getFilterChain().addLast(
                 "codec",
                 new ProtocolCodecFilter(new TextLineCodecFactory(Charset
-                        .forName("UTF-8"))));
+                .forName("UTF-8"))));
 
         acceptor.setHandler(new TimeServerHandler());
         acceptor.getSessionConfig().setReadBufferSize(2048);
