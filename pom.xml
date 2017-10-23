@@ -272,7 +272,7 @@
          <!--   <port>8081</port>-->
             <server>tomcat7</server>
             <username>admin</username>
-            <password>password</password>
+            <password>admin</password>
           </configuration>
         </plugin>
     </plugins>
