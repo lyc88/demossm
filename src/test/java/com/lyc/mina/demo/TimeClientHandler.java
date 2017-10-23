@@ -8,9 +8,18 @@ import org.apache.mina.core.session.IoSession;
  */
 public class TimeClientHandler extends IoHandlerAdapter {
 
+    MinaTimeClient minaTimeClient;
+
+    public TimeClientHandler(MinaTimeClient minaTimeClient) {
+        this.minaTimeClient = minaTimeClient;
+    }
+
     public void messageReceived(IoSession session, Object message) throws Exception {
         String content = message.toString();
         System.out.println("client receive a message is : " + content);
+
+        minaTimeClient.setMsg(content);
+
     }
 
     public void messageSent(IoSession session, Object message) throws Exception {

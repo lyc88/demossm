@@ -38,7 +38,7 @@ public class TimeServerHandler extends IoHandlerAdapter {
             return;
         }
         // 返回消息字符串
-        session.write("Hi Client!");
+        session.write("Hi Clienterrrrrrrrrrwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwxsdfdsfsefdsfdsfd12324325465444444444444444446666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666!");
         // 打印客户端传来的消息内容
         System.out.println("Message written : " + strMsg);
     }
