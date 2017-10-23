@@ -270,7 +270,9 @@
           <configuration>
             <url>http://localhost:8081/manager/text</url>
          <!--   <port>8081</port>-->
-            <path>/</path>
+            <server>tomcat7</server>
+            <username>admin</username>
+            <password>password</password>
           </configuration>
         </plugin>
     </plugins>
