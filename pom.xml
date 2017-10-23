@@ -268,11 +268,11 @@
           <groupId>org.apache.tomcat.maven</groupId>
           <artifactId>tomcat7-maven-plugin</artifactId>
           <configuration>
-            <port>8081</port>
+            <url>http://localhost:8081/manager</url>
+         <!--   <port>8081</port>-->
             <path>/</path>
           </configuration>
         </plugin>
-
     </plugins>
   </build>
 </project>
