@@ -268,11 +268,12 @@
           <groupId>org.apache.tomcat.maven</groupId>
           <artifactId>tomcat7-maven-plugin</artifactId>
           <configuration>
-            <url>http://127.0.0.1:8081/manager/text</url>
-         <!--   <port>8081</port>-->
-            <server>tomcat7</server>
+            <!--<url>http://127.0.0.1:8081/manager/text</url>-->
+          <port>8081</port>
+            <path>/</path>
+           <!-- <server>tomcat7</server>
             <username>admin</username>
-            <password>admin</password>
+            <password>admin</password>-->
           </configuration>
         </plugin>
     </plugins>
