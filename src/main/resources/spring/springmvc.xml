@@ -11,7 +11,14 @@
         <context:include-filter type="annotation" expression="org.springframework.stereotype.Controller"/>
     </context:component-scan>
 
-    <mvc:annotation-driven />
+    <!--<mvc:annotation-driven />-->
+
+    <mvc:annotation-driven>
+        <!--MyArgumentsResolver-->
+        <mvc:argument-resolvers>
+            <bean class="com.lyc.dao.Handler"/>
+        </mvc:argument-resolvers>
+    </mvc:annotation-driven>
     <bean
             class="org.springframework.web.servlet.view.InternalResourceViewResolver">
         <property name="prefix" value="/WEB-INF/jsp/" />
