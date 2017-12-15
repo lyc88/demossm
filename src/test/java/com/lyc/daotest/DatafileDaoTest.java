@@ -4,6 +4,7 @@ import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import com.lyc.dao.BMapper;
 import com.lyc.dao.DatafileDao;
+import com.lyc.dao.UserMapper;
 import com.lyc.model.po.B;
 import com.lyc.model.po.BExample;
 import com.lyc.model.query.DatafileQuery;
@@ -31,12 +32,24 @@ public class DatafileDaoTest {
     @Autowired
     private BMapper bMapper;
 
+    @Autowired
+    private UserMapper userMapper;
     @Test
     public void testquery(){
         DatafileQuery query = new DatafileQuery();
         query.setId(45);
         //datafileDao.query(query);
         System.out.println(datafileDao.query(query).get(0).getFilename());
+    }
+    @Test
+    public void test(){
+        List list = userMapper.findAll();
+        System.out.println(list.size()+">>>>>>>>>>>>>>>");
+    }
+    @Test
+    public void test2(){
+        List list = userMapper.findAll2();
+        System.out.println(list.size()+">>>>>>>>>>>>>>>");
     }
     @Test
     public void testquery1(){
