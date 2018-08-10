@@ -37,4 +37,17 @@
 		FROM `group` g, user_group u
 		WHERE g.group_id=u.group_id AND u.user_id=#{user_id}
     </select>
+
+    
+    <resultMap id="resultdept" type="com.lyc.model.po.Dept">
+        <id property="deptId" column="dept_id"/>
+        <result property="deptName" column="dept_name" />
+        <collection property="empList" column="dept_id" ofType="com.lyc.model.po.Emp">
+            <id column="emp_id" property="empId"></id>
+            <result property="empName" column="emp_name"/>
+        </collection>
+    </resultMap>
+    <select id="dept1" resultMap="resultdept" parameterType="int">
+        select * from dept left join emp on dept.dept_id = emp.dept_id where dept.dept_id = #{id}
+    </select>
 </mapper>

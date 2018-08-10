@@ -7,6 +7,7 @@ import com.lyc.dao.DatafileDao;
 import com.lyc.dao.UserMapper;
 import com.lyc.model.po.B;
 import com.lyc.model.po.BExample;
+import com.lyc.model.po.Dept;
 import com.lyc.model.query.DatafileQuery;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -45,6 +46,10 @@ public class DatafileDaoTest {
     public void test(){
         List list = userMapper.findAll();
         System.out.println(list.size()+">>>>>>>>>>>>>>>");
+
+        Dept dept = userMapper.dept1(11);
+
+        System.out.println(dept);
     }
     @Test
     public void test2(){
@@ -61,6 +66,13 @@ public class DatafileDaoTest {
         //分页信息
         PageInfo pageInfo = new PageInfo(list);
         logger.info(pageInfo.getPageNum()+"");
+        try{
+            //int i = 1/0;
+            String string = null;
+            string.length();
+        }catch (Exception e){
+            logger.error("error",e);
+        }
         //System.out.println(pageInfo.getTotal());
     }
 }
